@@ -6,18 +6,15 @@ exports[`App renders correctly 1`] = `
     class="app-container"
   >
     <div
-      class="title-container"
+      class="title-component"
     >
-      <h1
-        class="title-text"
+      <button
+        type="button"
       >
-        echium_photo
-      </h1>
-      <img
-        alt="Title Background"
-        class="title-background"
-        src="animate.gif"
-      />
+        enter
+        <br />
+        (warning flashing images)
+      </button>
     </div>
   </div>
 </DocumentFragment>
