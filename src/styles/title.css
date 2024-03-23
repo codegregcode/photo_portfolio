@@ -1,6 +1,170 @@
+.title-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
 .title-container {
   position: relative;
   text-align: center;
+  opacity: 100%;
+  animation: fadeIn 5s;
+  animation-name: imgShadow;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: forward;
+  box-shadow:
+    rgba(255, 0, 0, 0.25) 30px 54px 55px,
+    rgba(255, 0, 0, 0.12) 0px -20px 30px,
+    rgba(255, 0, 0, 0.12) 0px 4px 6px,
+    rgba(255, 0, 0, 0.17) 0px 12px 13px,
+    rgba(255, 0, 0, 0.09) 0px -3px 5px;
+}
+
+@keyframes imgShadow {
+  0% {
+    box-shadow:
+      rgba(255, 0, 0, 0.25) 0px 54px 55px,
+      rgba(255, 0, 0, 0.12) 0px -12px 30px,
+      rgba(255, 0, 0, 0.12) 0px 4px 6px,
+      rgba(255, 0, 0, 0.17) 0px 12px 13px,
+      rgba(255, 0, 0, 0.09) 0px -3px 5px;
+  }
+  20% {
+    box-shadow:
+      rgba(0, 200, 255, 0.25) 0px 54px 55px,
+      rgba(0, 200, 255, 0.12) 0px -12px 30px,
+      rgba(0, 200, 255, 0.12) 0px 4px 6px,
+      rgba(0, 200, 255, 0.17) 0px 12px 13px,
+      rgba(0, 200, 255, 0.09) 0px -3px 5px;
+  }
+  40% {
+    box-shadow:
+      rgba(0, 255, 0, 0.25) 0px 54px 55px,
+      rgba(0, 255, 0, 0.12) 0px -12px 30px,
+      rgba(0, 255, 0, 0.12) 0px 4px 6px,
+      rgba(0, 255, 0, 0.17) 0px 12px 13px,
+      rgba(0, 255, 0, 0.09) 0px -3px 5px;
+  }
+  60% {
+    box-shadow:
+      rgba(255, 0, 255, 0.25) 0px 54px 55px,
+      rgba(255, 0, 255, 0.12) 0px -12px 30px,
+      rgba(255, 0, 255, 0.12) 0px 4px 6px,
+      rgba(255, 0, 255, 0.17) 0px 12px 13px,
+      rgba(255, 0, 255, 0.09) 0px -3px 5px;
+  }
+  80% {
+    box-shadow:
+      rgba(0, 0, 255, 0.25) 0px 54px 55px,
+      rgba(0, 0, 255, 0.12) 0px -12px 30px,
+      rgba(0, 0, 255, 0.12) 0px 4px 6px,
+      rgba(0, 0, 255, 0.17) 0px 12px 13px,
+      rgba(0, 0, 255, 0.09) 0px -3px 5px;
+  }
+  100% {
+    box-shadow:
+      rgba(255, 255, 0, 0.25) 0px 54px 55px,
+      rgba(255, 255, 0, 0.12) 0px -12px 30px,
+      rgba(255, 255, 0, 0.12) 0px 4px 6px,
+      rgba(255, 255, 0, 0.17) 0px 12px 13px,
+      rgba(255, 255, 0, 0.09) 0px -3px 5px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+button {
+  background-color: transparent;
+  all: unset;
+  text-align: center;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow:
+    rgba(255, 255, 255, 0.25) 0px 54px 55px,
+    rgba(255, 255, 255, 0.25) 0px -12px 30px,
+    rgba(255, 255, 255, 0.12) 0px 4px 6px,
+    rgba(255, 255, 255, 0.17) 0px 12px 13px,
+    rgba(255, 255, 255, 0.09) 0px -3px 5px;
+}
+
+button:focus {
+  outline: revert;
+}
+
+button:hover {
+  color: rgb(255, 0, 0);
+  animation-name: hoverAni;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: forward;
+  cursor: pointer;
+}
+
+@keyframes hoverAni {
+  0% {
+    color: rgb(255, 0, 0);
+    box-shadow:
+      rgba(255, 0, 0, 0.25) 0px 54px 55px,
+      rgba(255, 0, 0, 0.12) 0px -12px 30px,
+      rgba(255, 0, 0, 0.12) 0px 4px 6px,
+      rgba(255, 0, 0, 0.17) 0px 12px 13px,
+      rgba(255, 0, 0, 0.09) 0px -3px 5px;
+  }
+  20% {
+    color: rgb(0, 255, 255);
+    box-shadow:
+      rgba(0, 255, 255, 0.25) 0px 54px 55px,
+      rgba(0, 255, 255, 0.12) 0px -12px 30px,
+      rgba(0, 255, 255, 0.12) 0px 4px 6px,
+      rgba(0, 255, 255, 0.17) 0px 12px 13px,
+      rgba(0, 255, 255, 0.09) 0px -3px 5px;
+  }
+  40% {
+    color: rgb(0, 255, 0);
+    box-shadow:
+      rgba(0, 255, 0, 0.25) 0px 54px 55px,
+      rgba(0, 255, 0, 0.12) 0px -12px 30px,
+      rgba(0, 255, 0, 0.12) 0px 4px 6px,
+      rgba(0, 255, 0, 0.17) 0px 12px 13px,
+      rgba(0, 255, 0, 0.09) 0px -3px 5px;
+  }
+  60% {
+    color: rgb(255, 0, 255);
+    box-shadow:
+      rgba(255, 0, 255, 0.25) 0px 54px 55px,
+      rgba(255, 0, 255, 0.12) 0px -12px 30px,
+      rgba(255, 0, 255, 0.12) 0px 4px 6px,
+      rgba(255, 0, 255, 0.17) 0px 12px 13px,
+      rgba(255, 0, 255, 0.09) 0px -3px 5px;
+  }
+  80% {
+    color: rgb(0, 0, 255);
+    box-shadow:
+      rgba(0, 0, 255, 0.25) 0px 54px 55px,
+      rgba(0, 0, 255, 0.12) 0px -12px 30px,
+      rgba(0, 0, 255, 0.12) 0px 4px 6px,
+      rgba(0, 0, 255, 0.17) 0px 12px 13px,
+      rgba(0, 0, 255, 0.09) 0px -3px 5px;
+  }
+  100% {
+    color: rgb(255, 255, 0);
+    box-shadow:
+      rgba(255, 255, 0, 0.25) 0px 54px 55px,
+      rgba(255, 255, 0, 0.12) 0px -12px 30px,
+      rgba(255, 255, 0, 0.12) 0px 4px 6px,
+      rgba(255, 255, 0, 0.17) 0px 12px 13px,
+      rgba(255, 255, 0, 0.09) 0px -3px 5px;
+  }
 }
 
 .title-text {
