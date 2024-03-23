@@ -1,0 +1,18 @@
+.title-container {
+  position: relative;
+  text-align: center;
+}
+
+.title-text {
+  position: absolute;
+  top: 200px;
+  left: 250px;
+  font-size: 90px;
+  color: white;
+  mix-blend-mode: difference;
+}
+
+img {
+  max-width: 900px;
+  height: auto;
+}
