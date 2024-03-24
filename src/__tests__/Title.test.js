@@ -1,18 +1,23 @@
 import React, { render, screen, fireEvent } from '@testing-library/react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Title from '../components/Title';
 
 describe('Title', () => {
   beforeEach(() => {
-    render(<Title />);
+    render(
+      <Router>
+        <Title />
+      </Router>
+    );
   });
 
   it('renders title button', () => {
-    const buttonElement = screen.getByText(/enter/i);
+    const buttonElement = screen.getByTestId('title-button');
     expect(buttonElement).toBeInTheDocument();
   });
 
   it('renders title h1 after button click', () => {
-    const buttonElement = screen.getByText(/enter/i);
+    const buttonElement = screen.getByTestId('title-button');
 
     fireEvent.click(buttonElement);
 
@@ -21,7 +26,7 @@ describe('Title', () => {
   });
 
   it('render title img after button click', () => {
-    const buttonElement = screen.getByText(/enter/i);
+    const buttonElement = screen.getByTestId('title-button');
 
     fireEvent.click(buttonElement);
 

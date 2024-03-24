@@ -9,6 +9,7 @@ exports[`App renders correctly 1`] = `
       class="title-component"
     >
       <button
+        data-testid="title-button"
         type="button"
       >
         enter
