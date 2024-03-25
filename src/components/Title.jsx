@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import gifBackground from '../assets/animate.gif';
 import '../styles/title.css';
 
 const Title = () => {
@@ -30,7 +29,7 @@ const Title = () => {
           <div className="title-container">
             <h1 className="title-text">echium_photo</h1>
             <img
-              src={gifBackground}
+              src="https://i.ibb.co/1fN4jRM/animate.gif"
               className="title-background"
               title="click me"
               alt="Title Background"
