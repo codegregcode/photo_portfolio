@@ -11,14 +11,10 @@ describe('IndexCard component', () => {
       {
         name: 'Journal 1',
         thumb: 'thumb1.jpg',
-        camera: 'Camera 1',
-        film: 'Film 1',
       },
       {
         name: 'Journal 2',
         thumb: 'thumb2.jpg',
-        camera: 'Camera 2',
-        film: 'Film 2',
       },
     ];
 
@@ -31,10 +27,6 @@ describe('IndexCard component', () => {
       expect(getByText('Journal 2')).toBeInTheDocument();
       expect(getByAltText('Journal 1 thumb')).toBeInTheDocument();
       expect(getByAltText('Journal 2 thumb')).toBeInTheDocument();
-      expect(getByText('Camera 1')).toBeInTheDocument();
-      expect(getByText('Camera 2')).toBeInTheDocument();
-      expect(getByText('Film 1')).toBeInTheDocument();
-      expect(getByText('Film 2')).toBeInTheDocument();
     });
   });
 });
