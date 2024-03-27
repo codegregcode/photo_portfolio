@@ -1,0 +1,66 @@
+.index-card-component {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.index-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid white;
+  width: 370px;
+  height: 363px;
+  background-color: rgb(252, 211, 222);
+  margin: 5px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.index-card:hover {
+  cursor: pointer;
+  box-shadow:
+    rgba(252, 211, 222, 0.25) 30px 54px 55px,
+    rgba(252, 211, 222, 0.12) 0px -20px 30px,
+    rgba(252, 211, 222, 0.12) 0px 4px 6px,
+    rgba(252, 211, 222, 0.17) 0px 12px 13px,
+    rgba(252, 211, 222, 0.09) 0px -3px 5px;
+}
+
+.index-card:nth-child(even):hover {
+  cursor: pointer;
+  box-shadow:
+    rgba(173, 245, 255, 0.25) 30px 54px 55px,
+    rgba(173, 245, 255, 0.12) 0px -20px 30px,
+    rgba(173, 245, 255, 0.12) 0px 4px 6px,
+    rgba(173, 245, 255, 0.17) 0px 12px 13px,
+    rgba(173, 245, 255, 0.09) 0px -3px 5px;
+}
+
+.index-card:nth-child(even) {
+  background-color: rgb(173, 245, 255);
+}
+
+.index-card:nth-child(even) h5,
+.index-card:nth-child(even) p {
+  background-color: rgb(173, 245, 255);
+}
+
+.index-card img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  background-color: rgb(252, 211, 222);
+  margin-bottom: 10px;
+}
+
+.index-card h5 {
+  background-color: rgb(252, 211, 222);
+  color: rgb(213, 86, 114);
+  margin-top: auto;
+}
+
+.index-card p {
+  font-size: smaller;
+  background-color: rgb(252, 211, 222);
+  color: rgb(213, 86, 114);
+}
