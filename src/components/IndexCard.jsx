@@ -23,7 +23,7 @@ const IndexCard = () => {
   }, []);
 
   useEffect(() => {
-    if (isVisible) {
+    if (isVisible && journals.length > 0) {
       journals.forEach((j, index) => {
         setTimeout(
           () => setIsVisible((prev) => ({ ...prev, [index]: true })),
@@ -36,9 +36,8 @@ const IndexCard = () => {
   return (
     <div className="index-card-component">
       {journals.map((journal, index) => (
-        <Link to={journal.path}>
+        <Link key={journal.path} to={journal.path}>
           <animated.div
-            key={journal.name}
             className={`index-card ${index % 2 !== 0 ? 'odd' : 'even'}`}
             title={`take me to ${journal.name}`}
             style={{

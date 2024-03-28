@@ -26,7 +26,7 @@
     rgba(252, 211, 222, 0.09) 0px -3px 5px;
 }
 
-.index-card:nth-child(even):hover {
+.index-card.odd:hover {
   cursor: pointer;
   box-shadow:
     rgba(173, 245, 255, 0.25) 30px 54px 55px,
@@ -36,12 +36,12 @@
     rgba(173, 245, 255, 0.09) 0px -3px 5px;
 }
 
-.index-card:nth-child(even) {
+.index-card.odd {
   background-color: rgb(173, 245, 255);
 }
 
-.index-card:nth-child(even) h5,
-.index-card:nth-child(even) p {
+.index-card.odd h5,
+.index-card.odd p {
   background-color: rgb(173, 245, 255);
 }
 
