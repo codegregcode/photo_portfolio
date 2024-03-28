@@ -18,22 +18,12 @@
 
 .index-card:hover {
   cursor: pointer;
-  box-shadow:
-    rgba(252, 211, 222, 0.25) 30px 54px 55px,
-    rgba(252, 211, 222, 0.12) 0px -20px 30px,
-    rgba(252, 211, 222, 0.12) 0px 4px 6px,
-    rgba(252, 211, 222, 0.17) 0px 12px 13px,
-    rgba(252, 211, 222, 0.09) 0px -3px 5px;
+  box-shadow: rgba(252, 211, 222, 0.25) 5px 15px 18px;
 }
 
 .index-card.odd:hover {
   cursor: pointer;
-  box-shadow:
-    rgba(173, 245, 255, 0.25) 30px 54px 55px,
-    rgba(173, 245, 255, 0.12) 0px -20px 30px,
-    rgba(173, 245, 255, 0.12) 0px 4px 6px,
-    rgba(173, 245, 255, 0.17) 0px 12px 13px,
-    rgba(173, 245, 255, 0.09) 0px -3px 5px;
+  box-shadow: rgba(173, 245, 255, 0.25) 5px 15px 18px;
 }
 
 .index-card.odd {
