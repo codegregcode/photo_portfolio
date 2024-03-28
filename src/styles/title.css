@@ -34,12 +34,7 @@ button {
   text-align: center;
   border: 1px solid;
   padding: 10px;
-  box-shadow:
-    rgba(255, 255, 255, 0.25) 0px 54px 55px,
-    rgba(255, 255, 255, 0.25) 0px -12px 30px,
-    rgba(255, 255, 255, 0.12) 0px 4px 6px,
-    rgba(255, 255, 255, 0.17) 0px 12px 13px,
-    rgba(255, 255, 255, 0.09) 0px -3px 5px;
+  box-shadow: rgba(255, 255, 255, 0.25) 5px 5px 2px;
 }
 
 button:focus {
@@ -47,7 +42,7 @@ button:focus {
 }
 
 button:hover {
-  color: rgb(255, 0, 0);
+  color: rgb(252, 211, 222);
   animation-name: hoverAni;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -57,58 +52,20 @@ button:hover {
 
 @keyframes hoverAni {
   0% {
-    color: rgb(255, 0, 0);
-    box-shadow:
-      rgba(255, 0, 0, 0.25) 0px 54px 55px,
-      rgba(255, 0, 0, 0.12) 0px -12px 30px,
-      rgba(255, 0, 0, 0.12) 0px 4px 6px,
-      rgba(255, 0, 0, 0.17) 0px 12px 13px,
-      rgba(255, 0, 0, 0.09) 0px -3px 5px;
+    color: rgb(252, 211, 222);
+    box-shadow: rgba(252, 211, 222, 0.25) 5px 5px 2px;
   }
-  20% {
-    color: rgb(0, 255, 255);
-    box-shadow:
-      rgba(0, 255, 255, 0.25) 0px 54px 55px,
-      rgba(0, 255, 255, 0.12) 0px -12px 30px,
-      rgba(0, 255, 255, 0.12) 0px 4px 6px,
-      rgba(0, 255, 255, 0.17) 0px 12px 13px,
-      rgba(0, 255, 255, 0.09) 0px -3px 5px;
+  33% {
+    color: rgb(173, 245, 255);
+    box-shadow: rgba(173, 245, 255, 0.25) 5px 5px 2px;
   }
-  40% {
-    color: rgb(0, 255, 0);
-    box-shadow:
-      rgba(0, 255, 0, 0.25) 0px 54px 55px,
-      rgba(0, 255, 0, 0.12) 0px -12px 30px,
-      rgba(0, 255, 0, 0.12) 0px 4px 6px,
-      rgba(0, 255, 0, 0.17) 0px 12px 13px,
-      rgba(0, 255, 0, 0.09) 0px -3px 5px;
-  }
-  60% {
-    color: rgb(255, 0, 255);
-    box-shadow:
-      rgba(255, 0, 255, 0.25) 0px 54px 55px,
-      rgba(255, 0, 255, 0.12) 0px -12px 30px,
-      rgba(255, 0, 255, 0.12) 0px 4px 6px,
-      rgba(255, 0, 255, 0.17) 0px 12px 13px,
-      rgba(255, 0, 255, 0.09) 0px -3px 5px;
-  }
-  80% {
-    color: rgb(0, 0, 255);
-    box-shadow:
-      rgba(0, 0, 255, 0.25) 0px 54px 55px,
-      rgba(0, 0, 255, 0.12) 0px -12px 30px,
-      rgba(0, 0, 255, 0.12) 0px 4px 6px,
-      rgba(0, 0, 255, 0.17) 0px 12px 13px,
-      rgba(0, 0, 255, 0.09) 0px -3px 5px;
+  66% {
+    color: rgb(0, 255, 197);
+    box-shadow: rgba(0, 255, 197, 0.25) 5px 5px 2px;
   }
   100% {
-    color: rgb(255, 255, 0);
-    box-shadow:
-      rgba(255, 255, 0, 0.25) 0px 54px 55px,
-      rgba(255, 255, 0, 0.12) 0px -12px 30px,
-      rgba(255, 255, 0, 0.12) 0px 4px 6px,
-      rgba(255, 255, 0, 0.17) 0px 12px 13px,
-      rgba(255, 255, 0, 0.09) 0px -3px 5px;
+    color: rgb(213, 86, 114);
+    box-shadow: rgba(213, 86, 114, 0.25) 5px 5px 2px;
   }
 }
 
@@ -126,58 +83,23 @@ button:hover {
   max-width: 900px;
   height: auto;
   animation-name: imgShadow;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-iteration-count: infinite;
   animation-direction: forward;
 }
 
 @keyframes imgShadow {
   0% {
-    box-shadow:
-      rgba(255, 0, 0, 0.25) 0px 54px 55px,
-      rgba(255, 0, 0, 0.12) 0px -12px 30px,
-      rgba(255, 0, 0, 0.12) 0px 4px 6px,
-      rgba(255, 0, 0, 0.17) 0px 12px 13px,
-      rgba(255, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: rgba(252, 211, 222, 0.25) -54px 54px 55px;
   }
   20% {
-    box-shadow:
-      rgba(0, 200, 255, 0.25) 0px 54px 55px,
-      rgba(0, 200, 255, 0.12) 0px -12px 30px,
-      rgba(0, 200, 255, 0.12) 0px 4px 6px,
-      rgba(0, 200, 255, 0.17) 0px 12px 13px,
-      rgba(0, 200, 255, 0.09) 0px -3px 5px;
+    box-shadow: rgba(173, 245, 255, 0.25) -54px 54px 55px;
   }
   40% {
-    box-shadow:
-      rgba(0, 255, 0, 0.25) 0px 54px 55px,
-      rgba(0, 255, 0, 0.12) 0px -12px 30px,
-      rgba(0, 255, 0, 0.12) 0px 4px 6px,
-      rgba(0, 255, 0, 0.17) 0px 12px 13px,
-      rgba(0, 255, 0, 0.09) 0px -3px 5px;
+    box-shadow: rgba(0, 255, 197, 0.25) -54px 54px 55px;
   }
-  60% {
-    box-shadow:
-      rgba(255, 0, 255, 0.25) 0px 54px 55px,
-      rgba(255, 0, 255, 0.12) 0px -12px 30px,
-      rgba(255, 0, 255, 0.12) 0px 4px 6px,
-      rgba(255, 0, 255, 0.17) 0px 12px 13px,
-      rgba(255, 0, 255, 0.09) 0px -3px 5px;
-  }
-  80% {
-    box-shadow:
-      rgba(0, 0, 255, 0.25) 0px 54px 55px,
-      rgba(0, 0, 255, 0.12) 0px -12px 30px,
-      rgba(0, 0, 255, 0.12) 0px 4px 6px,
-      rgba(0, 0, 255, 0.17) 0px 12px 13px,
-      rgba(0, 0, 255, 0.09) 0px -3px 5px;
-  }
+
   100% {
-    box-shadow:
-      rgba(255, 255, 0, 0.25) 0px 54px 55px,
-      rgba(255, 255, 0, 0.12) 0px -12px 30px,
-      rgba(255, 255, 0, 0.12) 0px 4px 6px,
-      rgba(255, 255, 0, 0.17) 0px 12px 13px,
-      rgba(255, 255, 0, 0.09) 0px -3px 5px;
+    box-shadow: rgba(213, 86, 114, 0.25) -54px 54px 55px;
   }
 }

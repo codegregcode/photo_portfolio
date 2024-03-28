@@ -29,7 +29,7 @@ const Title = () => {
           <div className="title-container">
             <h1 className="title-text">echium_photo</h1>
             <img
-              src="https://i.ibb.co/1fN4jRM/animate.gif"
+              src="https://i.ibb.co/WznLPnn/animate2.gif"
               className="title-background"
               title="click me"
               alt="Title Background"
