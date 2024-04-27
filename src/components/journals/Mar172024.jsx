@@ -1,34 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { ImageGallery } from 'react-image-grid-gallery';
 import '../../styles/journals/mar-17-2024.css';
 
+const imagesArray = [
+  {
+    alt: 'Chemical and Process Engineering School',
+    caption: 'Chemical and Process Engineering School',
+    src: 'https://i.ibb.co/kMJ23yG/PRINT-26-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400.jpg',
+  },
+  {
+    alt: 'Georges Field Trees',
+    caption: 'Georges Field Trees',
+    src: 'https://i.ibb.co/7NxZp4R/PRINT-20-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400.jpg',
+  },
+  {
+    alt: 'Georges Field Columns',
+    caption: 'Georges Field Columns',
+    src: 'https://i.ibb.co/ysx2dcj/PRINT-17-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400.jpg',
+  },
+  {
+    alt: 'William Henry Bragg Sculpture',
+    caption: 'William Henry Bragg Sculpture',
+    src: 'https://i.ibb.co/jML511Y/PRINT-28-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400.jpg',
+  },
+];
+
 const Mar172024 = () => {
-  const images = [
-    {
-      link: 'https://i.ibb.co/cySvq7h/PRINT-26-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400-web-Crop.jpg',
-      alt: 'chemical and process engineering school',
-    },
-    {
-      link: 'https://i.ibb.co/g7246Q1/PRINT-20-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400-web-Crop.jpg',
-      alt: 'georges field trees',
-    },
-    {
-      link: 'https://i.ibb.co/xYGB23q/PRINT-17-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400-web-Crop.jpg',
-      alt: 'georges field columns',
-    },
-    {
-      link: 'https://i.ibb.co/xgFvjV5/PRINT-28-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400-web-Crop.jpg',
-      alt: 'william henry bragg sculpture',
-    },
-  ];
-
-  const [currentImgIndex, setCurrentImgIndex] = useState(0);
-
-  const handleClick = () => {
-    const nextIndex = (currentImgIndex + 1) % images.length;
-    setCurrentImgIndex(nextIndex);
-  };
-
   return (
     <div className="mar-17-2024-component">
       <Link to="/index">
@@ -56,24 +54,11 @@ const Mar172024 = () => {
         </p>
       </div>
       <div className="mar-17-2024-img-container">
-        <div
-          className="mar-17-2024-img"
-          onClick={handleClick}
-          aria-label="next img"
-          tabIndex={images.alt}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              handleClick();
-            }
-          }}
-          role="button"
-        >
-          {' '}
-          <img
-            src={images[currentImgIndex].link}
-            alt={images[currentImgIndex].alt}
-          />
-        </div>
+        <ImageGallery
+          imagesInfoArray={imagesArray}
+          columnWidth={230}
+          gapSize={24}
+        />
       </div>
     </div>
   );
