@@ -1,6 +1,6 @@
 .index-card-component {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 
 .index-card {
