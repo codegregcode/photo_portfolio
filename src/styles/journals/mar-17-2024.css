@@ -6,6 +6,7 @@
 }
 
 .mar-17-2024-img-container {
+  display: flex;
   width: 90dvh;
   height: auto;
 }

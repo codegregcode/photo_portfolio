@@ -1,32 +1,51 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ImageGallery } from 'react-image-grid-gallery';
+import { LightgalleryProvider, LightgalleryItem } from 'react-lightgallery';
+
+import 'lightgallery.js/dist/css/lightgallery.css';
+
 import '../../styles/journals/mar-17-2024.css';
 
 const imagesArray = [
   {
     alt: 'Chemical and Process Engineering School',
-    caption: 'Chemical and Process Engineering School',
     src: 'https://i.ibb.co/kMJ23yG/PRINT-26-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400.jpg',
+    width: 1000,
+    height: 857.9,
   },
   {
     alt: 'Georges Field Trees',
-    caption: 'Georges Field Trees',
     src: 'https://i.ibb.co/7NxZp4R/PRINT-20-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400.jpg',
+    width: 666.75,
+    height: 1000,
   },
   {
     alt: 'Georges Field Columns',
-    caption: 'Georges Field Columns',
     src: 'https://i.ibb.co/ysx2dcj/PRINT-17-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400.jpg',
+    width: 666.75,
+    height: 1000,
   },
   {
     alt: 'William Henry Bragg Sculpture',
-    caption: 'William Henry Bragg Sculpture',
     src: 'https://i.ibb.co/jML511Y/PRINT-28-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400.jpg',
+    width: 1000,
+    height: 666.75,
   },
 ];
 
+const PhotoItem = ({ image, alt, group }) => (
+  <div style={{ maxWidth: '250px', width: '200px', padding: '5px' }}>
+    <LightgalleryItem group={group} src={image}>
+      <img src={image} alt={alt} style={{ width: '100%' }} />
+    </LightgalleryItem>
+  </div>
+);
+
 const Mar172024 = () => {
+  const lightGallerySettings = {
+    download: false,
+  };
+
   return (
     <div className="mar-17-2024-component">
       <Link to="/index">
@@ -54,11 +73,16 @@ const Mar172024 = () => {
         </p>
       </div>
       <div className="mar-17-2024-img-container">
-        <ImageGallery
-          imagesInfoArray={imagesArray}
-          columnWidth={230}
-          gapSize={24}
-        />
+        <LightgalleryProvider lightgallerySettings={lightGallerySettings}>
+          {imagesArray.map((image) => (
+            <PhotoItem
+              key={image.alt}
+              image={image.src}
+              alt={image.alt}
+              group="group1"
+            />
+          ))}
+        </LightgalleryProvider>
       </div>
     </div>
   );
