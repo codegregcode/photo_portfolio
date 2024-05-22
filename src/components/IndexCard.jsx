@@ -27,7 +27,7 @@ const IndexCard = () => {
       journals.forEach((j, index) => {
         setTimeout(
           () => setIsVisible((prev) => ({ ...prev, [index]: true })),
-          4000 + index * 200
+          4800 + index * 200
         );
       });
     }

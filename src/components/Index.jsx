@@ -35,6 +35,14 @@ const Index = () => {
     delay: 3200,
   });
 
+  const props5 = useSpring({
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? 'translateX(0px)' : 'translateX(-100px)',
+    fontSize: 10,
+    config: { tension: 400, friction: 20 },
+    delay: 4000,
+  });
+
   useEffect(() => {
     setIsVisible(true);
   }, []);
@@ -51,6 +59,15 @@ const Index = () => {
         >
           <animated.p style={props4} className="index-link">
             follow me on instagram
+          </animated.p>
+        </a>
+        <a
+          href="https://www.flickr.com/photos/200586606"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <animated.p style={props5} className="index-link">
+            or flickr
           </animated.p>
         </a>
         <animated.p style={props3}>see what i&apos;ve been up to:</animated.p>
