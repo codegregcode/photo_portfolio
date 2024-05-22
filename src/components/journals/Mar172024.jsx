@@ -34,7 +34,13 @@ const imagesArray = [
 ];
 
 const PhotoItem = ({ image, alt, group }) => (
-  <div style={{ maxWidth: '250px', width: '200px', padding: '5px' }}>
+  <div
+    style={{
+      maxWidth: '350px',
+      width: '300px',
+      padding: '5px',
+    }}
+  >
     <LightgalleryItem group={group} src={image}>
       <img src={image} alt={alt} style={{ width: '100%' }} />
     </LightgalleryItem>
@@ -52,7 +58,10 @@ const Mar172024 = () => {
         <div className="back-arrow" />
       </Link>
       <div className="mar-17-2024-top-text">
-        <h3>a test, a start</h3>
+        <h3>
+          a test,
+          <br /> a start
+        </h3>
         <h4>Pentax PC35AF-M // Ilford HP5+400</h4>
         <p>
           developed and scanned at{' '}
