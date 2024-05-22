@@ -10,26 +10,18 @@ const imagesArray = [
   {
     alt: 'Chemical and Process Engineering School',
     src: 'https://i.ibb.co/kMJ23yG/PRINT-26-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400.jpg',
-    width: 1000,
-    height: 857.9,
   },
   {
     alt: 'Georges Field Trees',
     src: 'https://i.ibb.co/7NxZp4R/PRINT-20-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400.jpg',
-    width: 666.75,
-    height: 1000,
   },
   {
     alt: 'Georges Field Columns',
     src: 'https://i.ibb.co/ysx2dcj/PRINT-17-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400.jpg',
-    width: 666.75,
-    height: 1000,
   },
   {
     alt: 'William Henry Bragg Sculpture',
     src: 'https://i.ibb.co/jML511Y/PRINT-28-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400.jpg',
-    width: 1000,
-    height: 666.75,
   },
 ];
 
