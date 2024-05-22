@@ -1,6 +1,9 @@
 .index-card-component {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
 
 .index-card {
@@ -39,4 +42,19 @@
   font-size: smaller;
   background-color: rgb(234, 244, 211);
   color: rgb(155, 106, 108);
+}
+
+@media (max-width: 400px) {
+  .index-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid white;
+    width: 259px;
+    height: 254.1px;
+    background-color: rgb(249, 241, 241);
+    margin: 5px;
+    overflow: hidden;
+    padding: 10px;
+  }
 }
