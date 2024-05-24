@@ -4,7 +4,7 @@ import { LightgalleryProvider, LightgalleryItem } from 'react-lightgallery';
 
 import 'lightgallery.js/dist/css/lightgallery.css';
 
-import '../../styles/journals/apr-27-2024.css';
+import '../../styles/journal.css';
 
 const imagesArray = [
   {
@@ -114,14 +114,15 @@ const PhotoItem = ({ image, alt, group }) => (
 const Apr272024 = () => {
   const lightGallerySettings = {
     download: false,
+    thumbnail: false,
   };
 
   return (
-    <div className="apr-27-2024-component">
+    <div className="journal-container">
       <Link to="/index">
         <div className="back-arrow" />
       </Link>
-      <div className="apr-27-2024-top-text">
+      <div className="top-text">
         <h3>Porto</h3>
         <h4>Pentax PC35AF-M // Kodak Gold 200 // Fuji 200 // Metropolis</h4>
         <p>
@@ -131,7 +132,7 @@ const Apr272024 = () => {
           </a>
         </p>
       </div>
-      <div className="apr-27-2024-img-container">
+      <div className="img-container">
         <LightgalleryProvider lightgallerySettings={lightGallerySettings}>
           {imagesArray.map((image) => (
             <PhotoItem

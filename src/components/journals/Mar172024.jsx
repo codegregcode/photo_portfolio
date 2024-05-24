@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { LightgalleryProvider, LightgalleryItem } from 'react-lightgallery';
 
+import Modal from '../Modal';
+
 import 'lightgallery.js/dist/css/lightgallery.css';
 
-import '../../styles/journals/mar-17-2024.css';
+import '../../styles/journal.css';
 
 const imagesArray = [
   {
@@ -40,16 +42,27 @@ const PhotoItem = ({ image, alt, group }) => (
 );
 
 const Mar172024 = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
   const lightGallerySettings = {
     download: false,
+    thumbnail: false,
   };
 
   return (
-    <div className="mar-17-2024-component">
+    <div className="journal-container">
       <Link to="/index">
         <div className="back-arrow" />
       </Link>
-      <div className="mar-17-2024-top-text">
+      <div className="top-text">
         <h3>
           a test,
           <br /> a start
@@ -62,18 +75,29 @@ const Mar172024 = () => {
           </a>
         </p>
       </div>
-      <div className="mar-17-2024-text-container">
-        <p>i bought a new (to me) camera, a Pentax PC35AF-M</p>
-        <p>
-          to test it out i loaded it with some HP5+, and took the camera out on
-          a quiet wander through Leeds Uni
-        </p>
-        <p>
-          everything seems ok with the camera; looking forward to taking more
-          photos with it
-        </p>
-      </div>
-      <div className="mar-17-2024-img-container">
+
+      <button
+        style={{ border: 'none', boxShadow: 'none' }}
+        type="button"
+        onClick={handleOpen}
+      >
+        words
+      </button>
+      <Modal isOpen={open} onClose={handleClose}>
+        <>
+          <p>i bought a new (to me) camera, a Pentax PC35AF-M</p>
+          <p>
+            to test it out i loaded it with some HP5+, and took the camera out
+            on a quiet wander through Leeds Uni
+          </p>
+          <p>
+            everything seems ok with the camera; looking forward to taking more
+            photos with it
+          </p>
+        </>
+      </Modal>
+
+      <div className="img-container">
         <LightgalleryProvider lightgallerySettings={lightGallerySettings}>
           {imagesArray.map((image) => (
             <PhotoItem
