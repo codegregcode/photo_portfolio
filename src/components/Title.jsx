@@ -20,8 +20,6 @@ const Title = () => {
           data-testid="title-button"
         >
           enter
-          <br />
-          (warning flashing images)
         </button>
       )}
       {isVisible && (
@@ -29,7 +27,7 @@ const Title = () => {
           <div className="title-container">
             <h1 className="title-text">echium_photo</h1>
             <img
-              src="https://i.ibb.co/WznLPnn/animate2.gif"
+              src="https://i.ibb.co/rphBVTG/430299530011.jpg"
               className="title-background"
               title="click me"
               alt="Title Background"
