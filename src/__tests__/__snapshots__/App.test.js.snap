@@ -13,8 +13,6 @@ exports[`App renders correctly 1`] = `
         type="button"
       >
         enter
-        <br />
-        (warning flashing images)
       </button>
     </div>
   </div>
