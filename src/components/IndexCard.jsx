@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { animated } from 'react-spring';
+import { toast } from 'react-toastify';
+
 import getJournals from '../firebase';
 import '../styles/index-card.css';
 
@@ -16,7 +18,7 @@ const IndexCard = () => {
         setJournals(journalsData);
         setIsVisible(true);
       } catch (error) {
-        console.error(error);
+        toast.error(error.message);
       }
     };
     fetchJournals();
