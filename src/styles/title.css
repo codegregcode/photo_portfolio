@@ -43,7 +43,7 @@ button:focus {
 }
 
 button:hover {
-  color: rgb(252, 211, 222);
+  color: rgb(0, 255, 197);
   cursor: pointer;
 }
 
