@@ -13,3 +13,6 @@ a web page to use as a photo journal
 - **web-vitals** : for measuring web performance metrics
 - **firebase** : for integratng with Firebase services for backend
 - **react-spring** : for spring-physics based animation
+- **react-toastify** : for notifications
+- **lightgallery.js** : JS lightbox gallery
+- **react-lightgallery** : React wrapper for lightgallery.js
