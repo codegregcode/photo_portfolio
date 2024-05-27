@@ -6,6 +6,9 @@ exports[`App renders correctly 1`] = `
     class="app-container"
   >
     <div
+      class="Toastify"
+    />
+    <div
       class="title-component"
     >
       <button
