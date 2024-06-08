@@ -1,30 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 import IndexCard from './IndexCard';
+import usePageVisit from '../hooks/usePageVisit';
 import '../styles/index-component.css';
 
 const Index = () => {
+  const hasVisited = usePageVisit('index');
   const [isVisible, setIsVisible] = useState(false);
 
   const props1 = useSpring({
     opacity: isVisible ? 1 : 0,
     transform: isVisible ? 'translateY(0px)' : 'translateY(-100px)',
     config: { tension: 400, friction: 20 },
-    delay: 800,
+    delay: hasVisited ? 0 : 800,
+    immediate: hasVisited,
   });
 
   const props2 = useSpring({
     opacity: isVisible ? 1 : 0,
     transform: isVisible ? 'translateX(0px)' : 'translateX(-100px)',
     config: { tension: 400, friction: 20 },
-    delay: 1600,
+    delay: hasVisited ? 0 : 1600,
+    immediate: hasVisited,
   });
 
   const props3 = useSpring({
     opacity: isVisible ? 1 : 0,
     transform: isVisible ? 'translateY(0px)' : 'translateY(100px)',
     config: { tension: 400, friction: 20 },
-    delay: 2400,
+    delay: hasVisited ? 0 : 2400,
+    immediate: hasVisited,
   });
 
   const props4 = useSpring({
@@ -32,7 +37,8 @@ const Index = () => {
     transform: isVisible ? 'translateX(0px)' : 'translateX(100px)',
     fontSize: 10,
     config: { tension: 400, friction: 20 },
-    delay: 3200,
+    delay: hasVisited ? 0 : 3200,
+    immediate: hasVisited,
   });
 
   const props5 = useSpring({
@@ -40,7 +46,8 @@ const Index = () => {
     transform: isVisible ? 'translateX(0px)' : 'translateX(-100px)',
     fontSize: 10,
     config: { tension: 400, friction: 20 },
-    delay: 4000,
+    delay: hasVisited ? 0 : 4000,
+    immediate: hasVisited,
   });
 
   useEffect(() => {
