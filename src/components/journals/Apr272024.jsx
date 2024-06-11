@@ -97,15 +97,10 @@ const imagesArray = [
   },
 ];
 
-const PhotoItem = ({ image, alt, group }) => (
-  <div
-    style={{
-      maxWidth: '350px',
-      width: '300px',
-      padding: '5px',
-    }}
-  >
-    <LightgalleryItem group={group} src={image}>
+const PhotoItem = ({ image, alt }) => (
+  <div className="masonry-item">
+    {' '}
+    <LightgalleryItem src={image}>
       <img src={image} alt={alt} style={{ width: '100%' }} />
     </LightgalleryItem>
   </div>
@@ -134,14 +129,12 @@ const Apr272024 = () => {
       </div>
       <div className="img-container">
         <LightgalleryProvider lightgallerySettings={lightGallerySettings}>
-          {imagesArray.map((image) => (
-            <PhotoItem
-              key={image.alt}
-              image={image.src}
-              alt={image.alt}
-              group="group1"
-            />
-          ))}
+          <div className="masonry-grid">
+            {' '}
+            {imagesArray.map((image) => (
+              <PhotoItem key={image.alt} image={image.src} alt={image.alt} />
+            ))}
+          </div>
         </LightgalleryProvider>
       </div>
     </div>
