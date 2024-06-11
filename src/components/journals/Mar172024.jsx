@@ -33,12 +33,14 @@ const imagesArray = [
 
 const PhotoItem = ({ image, alt, className }) => (
   <LightgalleryItem src={image}>
-    <img
-      src={image}
-      alt={alt}
-      style={{ width: '100%' }}
-      className={className}
-    />
+    <div className="masonry-item">
+      <img
+        src={image}
+        alt={alt}
+        style={{ width: '100%' }}
+        className={className}
+      />
+    </div>
   </LightgalleryItem>
 );
 
@@ -100,14 +102,17 @@ const Mar172024 = () => {
 
       <div className="img-container">
         <LightgalleryProvider lightgallerySettings={lightGallerySettings}>
-          {imagesArray.map((image) => (
-            <PhotoItem
-              key={image.alt}
-              image={image.src}
-              alt={image.alt}
-              className={image.cls}
-            />
-          ))}
+          <div className="masonry-grid">
+            {' '}
+            {imagesArray.map((image) => (
+              <PhotoItem
+                key={image.alt}
+                image={image.src}
+                alt={image.alt}
+                className={image.cls}
+              />
+            ))}
+          </div>
         </LightgalleryProvider>
       </div>
     </div>
