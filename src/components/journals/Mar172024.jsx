@@ -12,33 +12,36 @@ const imagesArray = [
   {
     alt: 'Chemical and Process Engineering School',
     src: 'https://i.ibb.co/kMJ23yG/PRINT-26-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400.jpg',
+    cls: 'horizontal',
   },
   {
     alt: 'Georges Field Trees',
     src: 'https://i.ibb.co/7NxZp4R/PRINT-20-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400.jpg',
+    cls: 'vertical',
   },
   {
     alt: 'Georges Field Columns',
     src: 'https://i.ibb.co/ysx2dcj/PRINT-17-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400.jpg',
+    cls: 'vertical',
   },
   {
     alt: 'William Henry Bragg Sculpture',
     src: 'https://i.ibb.co/jML511Y/PRINT-28-17-03-24-Leeds-Uni-Circular-Walk-Pentax35-AFM-HP5-400.jpg',
+    cls: 'horizontal',
   },
 ];
 
-const PhotoItem = ({ image, alt, group }) => (
-  <div
-    style={{
-      maxWidth: '350px',
-      width: '300px',
-      padding: '5px',
-    }}
-  >
-    <LightgalleryItem group={group} src={image}>
-      <img src={image} alt={alt} style={{ width: '100%' }} />
-    </LightgalleryItem>
-  </div>
+const PhotoItem = ({ image, alt, className }) => (
+  <LightgalleryItem src={image}>
+    <div className="masonry-item">
+      <img
+        src={image}
+        alt={alt}
+        style={{ width: '100%' }}
+        className={className}
+      />
+    </div>
+  </LightgalleryItem>
 );
 
 const Mar172024 = () => {
@@ -99,14 +102,17 @@ const Mar172024 = () => {
 
       <div className="img-container">
         <LightgalleryProvider lightgallerySettings={lightGallerySettings}>
-          {imagesArray.map((image) => (
-            <PhotoItem
-              key={image.alt}
-              image={image.src}
-              alt={image.alt}
-              group="group1"
-            />
-          ))}
+          <div className="masonry-grid">
+            {' '}
+            {imagesArray.map((image) => (
+              <PhotoItem
+                key={image.alt}
+                image={image.src}
+                alt={image.alt}
+                className={image.cls}
+              />
+            ))}
+          </div>
         </LightgalleryProvider>
       </div>
     </div>
