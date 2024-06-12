@@ -1,36 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
+import useAnimation from '../hooks/useAnimation';
 import IndexCard from './IndexCard';
 import '../styles/index-component.css';
 
 const Index = () => {
   const showAnimation =
     sessionStorage.getItem('show_landing_animation') !== '1';
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
-  useEffect(() => {
-    if (showAnimation) {
-      const timer = setTimeout(() => {
-        sessionStorage.setItem('show_landing_animation', '1');
-      }, 4000);
-      return () => clearTimeout(timer);
-    }
-    return undefined;
-  }, [showAnimation]);
-
-  useEffect(() => {
-    const handleUnload = () => {
-      sessionStorage.removeItem('show_landing_animation');
-    };
-    window.addEventListener('beforeunload', handleUnload);
-    return () => {
-      window.removeEventListener('beforeunload', handleUnload);
-    };
-  }, []);
+  const isVisible = useAnimation();
 
   const props1 = useSpring({
     opacity: isVisible ? 1 : 0,
