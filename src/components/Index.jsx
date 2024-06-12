@@ -1,35 +1,59 @@
 import React, { useState, useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 import IndexCard from './IndexCard';
-import usePageVisit from '../hooks/usePageVisit';
 import '../styles/index-component.css';
 
 const Index = () => {
-  const hasVisited = usePageVisit('index');
+  const showAnimation =
+    sessionStorage.getItem('show_landing_animation') !== '1';
   const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  useEffect(() => {
+    if (showAnimation) {
+      const timer = setTimeout(() => {
+        sessionStorage.setItem('show_landing_animation', '1');
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+    return undefined;
+  }, [showAnimation]);
+
+  useEffect(() => {
+    const handleUnload = () => {
+      sessionStorage.removeItem('show_landing_animation');
+    };
+    window.addEventListener('beforeunload', handleUnload);
+    return () => {
+      window.removeEventListener('beforeunload', handleUnload);
+    };
+  }, []);
 
   const props1 = useSpring({
     opacity: isVisible ? 1 : 0,
     transform: isVisible ? 'translateY(0px)' : 'translateY(-100px)',
     config: { tension: 400, friction: 20 },
-    delay: hasVisited ? 0 : 800,
-    immediate: hasVisited,
+    delay: showAnimation ? 800 : 0,
+    immediate: !showAnimation,
   });
 
   const props2 = useSpring({
     opacity: isVisible ? 1 : 0,
     transform: isVisible ? 'translateX(0px)' : 'translateX(-100px)',
     config: { tension: 400, friction: 20 },
-    delay: hasVisited ? 0 : 1600,
-    immediate: hasVisited,
+    delay: showAnimation ? 1600 : 0,
+    immediate: !showAnimation,
   });
 
   const props3 = useSpring({
     opacity: isVisible ? 1 : 0,
     transform: isVisible ? 'translateY(0px)' : 'translateY(100px)',
     config: { tension: 400, friction: 20 },
-    delay: hasVisited ? 0 : 2400,
-    immediate: hasVisited,
+    delay: showAnimation ? 2400 : 0,
+    immediate: !showAnimation,
   });
 
   const props4 = useSpring({
@@ -37,8 +61,8 @@ const Index = () => {
     transform: isVisible ? 'translateX(0px)' : 'translateX(100px)',
     fontSize: 10,
     config: { tension: 400, friction: 20 },
-    delay: hasVisited ? 0 : 3200,
-    immediate: hasVisited,
+    delay: showAnimation ? 3200 : 0,
+    immediate: !showAnimation,
   });
 
   const props5 = useSpring({
@@ -46,13 +70,9 @@ const Index = () => {
     transform: isVisible ? 'translateX(0px)' : 'translateX(-100px)',
     fontSize: 10,
     config: { tension: 400, friction: 20 },
-    delay: hasVisited ? 0 : 4000,
-    immediate: hasVisited,
+    delay: showAnimation ? 4000 : 0,
+    immediate: !showAnimation,
   });
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
 
   return (
     <div className="index-component">
