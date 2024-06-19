@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { animated } from 'react-spring';
 import { toast } from 'react-toastify';
-import useAnimation from '../hooks/useAnimation';
 
 import getJournals from '../firebase';
 import '../styles/index-card.css';
@@ -12,10 +11,6 @@ const IndexCard = () => {
   const [journals, setJournals] = useState([]);
   const showAnimation =
     sessionStorage.getItem('show_journal_animation') !== '1';
-
-  console.log(
-    `IndexCard-showAnimation: ${showAnimation} -useAnimation: ${useAnimation()}`
-  );
 
   useEffect(() => {
     const fetchJournals = async () => {
@@ -31,7 +26,6 @@ const IndexCard = () => {
     fetchJournals();
   }, []);
 
-  // perhaps set a new marker in sessionStorage ie indexCard showAnimation that if is 1 does not show animation if doesn't exist it plays??
   useEffect(() => {
     if (isVisible && journals.length > 0) {
       let totalDelay = 0;
@@ -41,28 +35,17 @@ const IndexCard = () => {
           () => {
             setIsVisible((prev) => ({ ...prev, [index]: true }));
           },
-          !showAnimation ? 0 : 4800 + index * 200
+          showAnimation ? 4800 + index * 200 : 0
         );
 
-        totalDelay = !showAnimation ? 0 : 4800 + (index + 1) * 200;
+        totalDelay = showAnimation ? 4800 + (index + 1) * 200 : 0;
       });
 
       setTimeout(() => {
-        console.log('The end of the array');
         sessionStorage.setItem('show_journal_animation', '1');
       }, totalDelay);
     }
   }, [isVisible, journals]);
-
-  useEffect(() => {
-    const handleUnload = () => {
-      sessionStorage.removeItem('show_journal_animation');
-    };
-    window.removeEventListener('beforeunload', handleUnload);
-    return () => {
-      window.removeEventListener('beforeunload', handleUnload);
-    };
-  }, []);
 
   return (
     <div className="index-card-component">

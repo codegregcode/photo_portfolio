@@ -18,16 +18,6 @@ const useAnimation = () => {
   }, []);
 
   useEffect(() => {
-    const handleUnload = () => {
-      sessionStorage.removeItem('show_landing_animation');
-    };
-    window.addEventListener('beforeunload', handleUnload);
-    return () => {
-      window.removeEventListener('beforeunload', handleUnload);
-    };
-  }, []);
-
-  useEffect(() => {
     setIsVisible(true);
   }, []);
 
